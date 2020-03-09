@@ -3,11 +3,17 @@ service: serverless
 provider:
   name: aws
   runtime: nodejs8.10
-  profile: femasters
+  # profile: femasters
+  # for aws permissions
   region: us-west-1
   stage: dev
 
+# telling aws what plugins we need
 plugins:
   - serverless-offline
 
-    
+# need a functions property
+functions: 
+  helloworld:
+    handler: src/helloworld.handler
+
